@@ -1,0 +1,43 @@
+﻿@page "/planets"
+@inject IPlanetsApi PlanetsApi
+
+<h1>The Planets of Earth's Solar System</h1>
+<br />
+@if (PlanetList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Orbital Distance (Mkm)</th>
+                <th>Diameter (km)</th>
+                <th>Gravity (Earth)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var planet in PlanetList)
+            {
+                <tr>
+                    <td><a href="explore/@planet.Name">@planet.Name</a></td>
+                    <td>@planet.OrbitDistance.ToPrettyString()</td>
+                    <td>@planet.Diameter.ToPrettyString()</td>
+                    <td>@planet.Gravity.ToPrettyString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Planet> PlanetList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        PlanetList = (await PlanetsApi.GetPlanetsAsync()).ToList();
+    }
+
+}

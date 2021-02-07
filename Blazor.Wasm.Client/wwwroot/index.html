@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Blazor WASM</title>
+    <base href="/" />
+    <!--NOTE: References to static resources in the Blazor.Core assembly-->
+    <link href="_content/Blazor.Core/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="_content/Blazor.Core/css/app.css" rel="stylesheet" />
+    <!--NOTE: Virtual file? There is not such file but this seems to be required for stylesheets to function-->
+    <link href="Blazor.Wasm.Client.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <app>Loading...</app>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+﻿@page "/Explore"
+@page "/Explore/{name}"
+
+@inject IPlanetsApi PlanetsApi
+
+<button class="btn btn-primary" @onclick="async () => await NextPlanetAsync()">Next</button>
+<hr />
+@if (CurrentPlanet == null)
+{
+    <h1>No current planet</h1>
+}
+else
+{
+    <h1>@CurrentPlanet.Name</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Orbital Distance (M km)</td>
+                <td>@CurrentPlanet.OrbitDistance.ToPrettyString()</td>
+            </tr>
+            <tr>
+                <td>Diameter (km)</td>
+                <td>@CurrentPlanet.Diameter.ToPrettyString()</td>
+            </tr>
+            <tr>
+                <td>Gravity (x Earth)</td>
+                <td>@CurrentPlanet.Gravity.ToPrettyString()</td>
+            </tr>
+            <tr>
+                <td>Mass (x Earth)</td>
+                <td>@CurrentPlanet.Mass.ToPrettyString()</td>
+            </tr>
+            <tr>
+                <td>Orbital Period (days)</td>
+                <td>@CurrentPlanet.OrbitPeriod.ToPrettyString()</td>
+            </tr>
+        </tbody>
+    </table>
+    <img src="@CurrentPlanet.Image" width="400" height="400" />
+}
+
+@code {
+
+    [Parameter]
+    public string Name { get; set; }
+
+    private Planet CurrentPlanet { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (string.IsNullOrWhiteSpace(Name)) { Name = "Mercury"; }
+
+        CurrentPlanet = await PlanetsApi.GetPlanetAsync(Name);
+    }
+
+    public async Task NextPlanetAsync()
+    {
+        var index = Array.IndexOf<string>(PlanetUtility.Names, Name);
+        if (index == PlanetUtility.Names.Length - 1) { index = -1; }
+        index++;
+
+        CurrentPlanet = await PlanetsApi.GetPlanetAsync(PlanetUtility.Names[index]);
+        Name = CurrentPlanet.Name;
+    }
+}
