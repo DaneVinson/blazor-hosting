@@ -56,7 +56,6 @@ namespace Blazor.Server.Host
                     endpoints.MapBlazorHub();
                     endpoints.MapFallbackToPage("/_Host");
                 });
-
         }
     }
 }
