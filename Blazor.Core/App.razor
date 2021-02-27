@@ -1,8 +1,6 @@
 @using Blazor.Core.Shared
 
-
-@*NOTE: Use "AdditionalAssemblies" to add components in Blazor.Core to routing*@
-<Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(MainLayout).Assembly }" PreferExactMatches="@true">
+<Router AppAssembly="@typeof(MainLayout).Assembly" PreferExactMatches="@true">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
     </Found>
