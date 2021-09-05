@@ -1,11 +1,11 @@
 [
-	{"Diameter":4879,"Gravity":0.38,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/mercury.jpg","Mass":0.05,"Name":"Mercury","OrbitDistance":57.9,"OrbitPeriod":88},
-	{"Diameter":12104,"Gravity":0.91,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/venus.jpg","Mass":0.8,"Name":"Venus","OrbitDistance":108.2,"OrbitPeriod":224.7},
-	{"Diameter":12756,"Gravity":1,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/earth.jpg","Mass":1,"Name":"Earth","OrbitDistance":149.6,"OrbitPeriod":365.2},
-	{"Diameter":6792,"Gravity":0.38,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/mars.jpg","Mass":0.1,"Name":"Mars","OrbitDistance":227.9,"OrbitPeriod":687},
-	{"Diameter":142984,"Gravity":2.3,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/jupiter.jpg","Mass":317,"Name":"Jupiter","OrbitDistance":778.6,"OrbitPeriod":4331},
-	{"Diameter":120536,"Gravity":0.92,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/saturn.jpg","Mass":95,"Name":"Saturn","OrbitDistance":1433.5,"OrbitPeriod":10747},
-	{"Diameter":51118,"Gravity":0.89,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/uranus.jpg","Mass":14.5,"Name":"Uranus","OrbitDistance":2872.5,"OrbitPeriod":30589},
-	{"Diameter":49528,"Gravity":1.1,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/neptune.jpg","Mass":17.0,"Name":"Neptune","OrbitDistance":4495.1,"OrbitPeriod":59800},
-	{"Diameter":2370,"Gravity":0.07,"Image":"https://nssdc.gsfc.nasa.gov/planetary/image/nh_pluto.jpg","Mass":0.002,"Name":"Pluto","OrbitDistance":5906.4,"OrbitPeriod":90560}
+	{"Diameter":4879,"Gravity":0.38,"Image":"_content/Blazor.Core/images/mercury.png","Mass":0.05,"Name":"Mercury","OrbitDistance":57.9,"OrbitPeriod":88},
+	{"Diameter":12104,"Gravity":0.91,"Image":"_content/Blazor.Core/images/venus.png","Mass":0.8,"Name":"Venus","OrbitDistance":108.2,"OrbitPeriod":224.7},
+	{"Diameter":12756,"Gravity":1,"Image":"_content/Blazor.Core/images/earth.png","Mass":1,"Name":"Earth","OrbitDistance":149.6,"OrbitPeriod":365.2},
+	{"Diameter":6792,"Gravity":0.38,"Image":"_content/Blazor.Core/images/mars.png","Mass":0.1,"Name":"Mars","OrbitDistance":227.9,"OrbitPeriod":687},
+	{"Diameter":142984,"Gravity":2.3,"Image":"_content/Blazor.Core/images/jupiter.png","Mass":317,"Name":"Jupiter","OrbitDistance":778.6,"OrbitPeriod":4331},
+	{"Diameter":120536,"Gravity":0.92,"Image":"_content/Blazor.Core/images/saturn.png","Mass":95,"Name":"Saturn","OrbitDistance":1433.5,"OrbitPeriod":10747},
+	{"Diameter":51118,"Gravity":0.89,"Image":"_content/Blazor.Core/images/uranus.png","Mass":14.5,"Name":"Uranus","OrbitDistance":2872.5,"OrbitPeriod":30589},
+	{"Diameter":49528,"Gravity":1.1,"Image":"_content/Blazor.Core/images/neptune.png","Mass":17.0,"Name":"Neptune","OrbitDistance":4495.1,"OrbitPeriod":59800},
+	{"Diameter":2370,"Gravity":0.07,"Image":"_content/Blazor.Core/images/pluto.png","Mass":0.002,"Name":"Pluto","OrbitDistance":5906.4,"OrbitPeriod":90560}
 ]
