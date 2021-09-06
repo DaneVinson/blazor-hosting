@@ -11,13 +11,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Server.Host", "Blazor.Server.Host\Blazor.Server.Host.csproj", "{660CA823-ECB7-4128-902E-E3ACD3AB4D8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi.Core", "RestApi.Core\RestApi.Core.csproj", "{AD88EA52-E4AD-402A-820F-EEDA781FB31A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApi.Core", "RestApi.Core\RestApi.Core.csproj", "{AD88EA52-E4AD-402A-820F-EEDA781FB31A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Core", "Blazor.Core\Blazor.Core.csproj", "{5530B5A3-627E-4FAC-ACCB-E11B241E661C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Core", "Blazor.Core\Blazor.Core.csproj", "{5530B5A3-627E-4FAC-ACCB-E11B241E661C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wasm", "Wasm", "{B34A1F3C-66A5-46F2-B3C7-4153D1DB5B2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{31CF12C6-4942-4A18-B716-47675883AE06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Solution", ".Solution", "{3D1D5010-5B23-408C-A78C-FE8FCAD30264}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
