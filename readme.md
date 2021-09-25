@@ -19,5 +19,5 @@ Blazor Server and Blazor WASM hosting models are considered. Blazor Server has a
 
 ## Get Started
 * Clone the repository
-* Open `BlazorHosting.sln` with Visual Studio
-* Set the start-in project to either `Blazor.Server.Host` or `Blazor.Wasm.Host` (Blazor Server or WASM hosting respectively) and run
+* Compile `BlazorHosting.sln`
+* Run `Blazor.Server.Host` or `Blazor.Wasm.Host` (Blazor Server or WASM hosting respectively)
