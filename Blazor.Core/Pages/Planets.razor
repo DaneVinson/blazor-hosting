@@ -1,4 +1,4 @@
-﻿@page "/planets"
+﻿@page "/theplanets"
 @inject IPlanetsApi PlanetsApi
 
 <h1>The Planets of Earth's Solar System</h1>
@@ -37,7 +37,8 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        PlanetList = (await PlanetsApi.GetPlanetsAsync()).ToList();
+        var planets = await PlanetsApi.GetPlanetsAsync() ?? [];
+        PlanetList = planets.ToList();
     }
 
 }

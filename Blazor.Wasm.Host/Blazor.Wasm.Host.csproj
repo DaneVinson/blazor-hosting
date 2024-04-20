@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Blazor.Wasm.Client\Blazor.Wasm.Client.csproj" />
-    <ProjectReference Include="..\RestApi.Core\RestApi.Core.csproj" />
+    <ProjectReference Include="..\Services.Core\Services.Core.csproj" />
   </ItemGroup>
 
 </Project>

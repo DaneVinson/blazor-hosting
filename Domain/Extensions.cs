@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Domain;
 
-namespace Domain
+public static class Extensions
 {
-    public static class Extensions
-    {
-        public static string ToPrettyString(this decimal number) =>
-            $"{number:#,##0.##}";
-    }
+    public static string ToPrettyString(this decimal number) =>
+        $"{number:#,##0.##}";
 }

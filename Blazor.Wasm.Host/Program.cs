@@ -1,23 +1,26 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Domain;
+using Services.Core;
 
-using Hosting = Microsoft.Extensions.Hosting;
+var builder = WebApplication.CreateBuilder(args);
 
-namespace Blazor.Wasm.Host
+builder.Services.AddSingleton<IPlanetsApi, PlanetsDataService>();
+
+var app = builder.Build();
+
+app.UseHsts()
+    .UseHttpsRedirection()
+    .UseBlazorFrameworkFiles()
+    .UseStaticFiles()
+    .UseRouting()
+    .UseEndpoints(builder => builder.MapFallbackToFile("index.html"));
+
+app.MapGet("/planets", async (IPlanetsApi planetsApi) =>
 {
-    public class Program
-    {
-        public static void Main(string[] args) =>
-            Hosting.Host
-                .CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(builder => { builder.UseStartup<Startup>(); })
-                .Build()
-                .Run();
-    }
-}
+    return await planetsApi.GetPlanetsAsync();
+});
+app.MapGet("/planets/{name}", async (IPlanetsApi planetsApi, string name) =>
+{
+    return await planetsApi.GetPlanetAsync(name);
+});
+
+app.Run();

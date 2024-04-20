@@ -1,23 +1,22 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Domain;
+using Services.Core;
 
-using Hosting = Microsoft.Extensions.Hosting;
+var builder = WebApplication.CreateBuilder(args);
 
-namespace Blazor.Server.Host
-{
-    public class Program
+builder.Services.AddSingleton<IPlanetsApi, PlanetsDataService>();
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+
+var app = builder.Build();
+
+app.UseHttpsRedirection()
+    .UseStaticFiles()
+    .UseRouting()
+    .UseAuthorization()
+    .UseEndpoints(endpoints =>
     {
-        public static void Main(string[] args) =>
-            Hosting.Host
-                .CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(builder => { builder.UseStartup<Startup>(); })
-                .Build()
-                .Run();
-    }
-}
+        endpoints.MapBlazorHub();
+        endpoints.MapFallbackToPage("/_Host");
+    });
+
+app.Run();
