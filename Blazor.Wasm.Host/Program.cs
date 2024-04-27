@@ -1,18 +1,26 @@
+using Blazor.Core.Shared;
+using Blazor.Wasm.Host;
 using Domain;
 using Services.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IPlanetsApi, PlanetsDataService>();
+builder.Services
+        .AddRazorComponents()
+        .AddInteractiveWebAssemblyComponents();
 
 var app = builder.Build();
 
 app.UseHsts()
     .UseHttpsRedirection()
-    .UseBlazorFrameworkFiles()
     .UseStaticFiles()
     .UseRouting()
-    .UseEndpoints(builder => builder.MapFallbackToFile("index.html"));
+    .UseAntiforgery();
+
+app.MapRazorComponents<App>()
+    .AddInteractiveWebAssemblyRenderMode()
+    .AddAdditionalAssemblies(typeof(Blazor.Wasm.Client._Imports).Assembly, typeof(MainLayout).Assembly);
 
 app.MapGet("/planets", async (IPlanetsApi planetsApi) =>
 {
